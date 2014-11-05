@@ -14,6 +14,8 @@ namespace GitSumProject
         //Push To Remote GitSum
 
         //Push To Remote GitSum
+        //PUSH INSTRUCTIONS
+        //http://stackoverflow.com/questions/6138493/unable-to-push-to-repository-using-git-extensions
         
     }
 }
