@@ -8,5 +8,9 @@ namespace GitSumProject
 {
     class Class1
     {
+        //Feature 1
+        // Hello
+
+
     }
 }
