@@ -23,6 +23,9 @@ namespace GitSumProject
         public MainWindow()
         {
             InitializeComponent();
+
+            //Changes
+
         }
     }
 }
