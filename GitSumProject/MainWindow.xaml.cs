@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity.Infrastructure;
+
 
 namespace GitSumProject
 {
@@ -24,8 +26,28 @@ namespace GitSumProject
         {
             InitializeComponent();
 
-            //Changes
-            //Feature 1 changes
+            try
+            {
+                //Changes
+                //Feature 1 changes
+                var workout = new DataModel.Workout();
+                workout.Exercises.Add(new DataModel.Exercise() { Title = "Warmup", Description = "" });
+
+                var db = new Context();
+                db.Workouts.Add(workout);
+                var ss = db.SaveChanges();
+
+                MessageBox.Show(String.Format("{0} workouts in db", db.Workouts.Count()));
+                var connectionString = ((IObjectContextAdapter)db).ObjectContext.Connection.ConnectionString;
+                MessageBox.Show(String.Format("{0} : Connection String", connectionString));
+            }
+            catch (Exception ex)
+            {
+                var error = ex; 
+                //log
+
+            }
+
         }
     }
 }
